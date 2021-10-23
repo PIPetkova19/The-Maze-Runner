@@ -44,13 +44,13 @@ void menu() {
 
 		gotoxy(10, 5);
 		color(Set[0]);
-		cout << "1.Menu";
+		cout << "1.Start Game";
 
 
 
 		gotoxy(10, 6);
 		color(Set[1]);
-		cout << "2.How to play";
+		cout << "2.Instructions";
 
 
 
