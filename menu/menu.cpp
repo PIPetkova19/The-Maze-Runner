@@ -1,7 +1,10 @@
 #include <iostream>
-#include <windows.h>
-#include <conio.h>
+#include <windows.h> // For color functions
+#include <conio.h> // For getch()
+
 using namespace std;
+
+//Print Welcome 
 void frontEnd()
 {
 	cout << "                      ___       ___           ____                     " << endl;
@@ -11,16 +14,17 @@ void frontEnd()
 	cout << "                       \\ \\  \\/   \\_\\  \\/\\   __/ \\_\\  \\_/\\ \\__/ /\\ \\ \\ \\/\\  \\/\\  \\/\\  \\/\\   __/" << endl;
 	cout << "                        \\  \\____  ____/\\ \\____ \\/\\____ \\ \\____ \\ \\____/\\ \\_ \\ \\_ \\ \\_ \\ \\____ \\" << endl;
 	cout << "                          \\/ __/ / __/  \\/ ____/\\/ ____/\\/ ____/\\/___/  \\/ _/\\/ _/\\/ _/\\/ ____/" << endl;
-
-
 }
 
 
-
+// Sets the cursor position in the specified console screen buffer
 void color(int color)
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
+
+
+//Defines the coordinates of a character cell in a console screen buffer
 void gotoxy(int x, int y)
 {
 	COORD c;
@@ -30,20 +34,21 @@ void gotoxy(int x, int y)
 }
 
 
-
+//Calls Menu
 void menu() {
 	int Set[] = { 7,7,7 };
 	int counter = 2;
 	char key;
 
-		cout << endl;
-		cout << "                              ___________________________ Menu ___________________________" << endl;
+
+	cout << endl;
+	cout << "                              ___________________________ Menu ___________________________" << endl;
 
 	for (int i = 0;;)
 	{
 		key = _getch();
 
-		
+
 
 		gotoxy(10, 5);
 		color(Set[0]);
@@ -63,6 +68,7 @@ void menu() {
 
 
 
+		//Move cursor through the options
 		if (key == 72 && (counter >= 2 && counter <= 3))
 		{
 			counter--;
@@ -73,10 +79,12 @@ void menu() {
 		}
 
 
-
+		//Set define colors
 		Set[0] = 7;
 		Set[1] = 7;
 		Set[2] = 7;
+
+		//Set color while moving through the option
 		if (counter == 1)
 		{
 			Set[0] = 12;
