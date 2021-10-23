@@ -36,29 +36,30 @@ void menu() {
 	int counter = 2;
 	char key;
 
-
+		cout << endl;
+		cout << "                              ___________________________ Menu ___________________________" << endl;
 
 	for (int i = 0;;)
 	{
 		key = _getch();
 
-
+		
 
 		gotoxy(10, 5);
 		color(Set[0]);
-		cout << "                                      1.Start Game" << endl;
+		cout << "                      1.Start Game" << endl;
 
 
 
 		gotoxy(10, 6);
 		color(Set[1]);
-		cout << "                                      2.Instructions" << endl;
+		cout << "                      2.Instructions" << endl;
 
 
 
 		gotoxy(10, 7);
 		color(Set[2]);
-		cout << "                                      3.Exit" << endl;
+		cout << "                      3.Exit" << endl;
 
 
 
