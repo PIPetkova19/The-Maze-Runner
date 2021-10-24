@@ -6,5 +6,4 @@
 #define KEY_RIGHT 77
 
 void print_maze();
-int gotoxy(int x, int y);
 void movingObject();
