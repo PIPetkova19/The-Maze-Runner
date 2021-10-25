@@ -30,65 +30,135 @@ void print_maze() {
 	};
 	cout << endl;
 
+
+
+
+
 	for (int i = 0; i <= 7; i++) {
-		cout << "  ";
+		cout << " ";
 		for (int j = 0; j <= 7; j++) {
 			cout << maze[i][j] << " ";
 		}
 		cout << endl;
 	}
 }
-int main()
-{
-	int x = 2, y = 3;
-	system("CLS");
+
+
+
+
+void movingObject(int x, int y) {
 	char ch;
+
+
+
+	while (true)
+	{
+		ch = _getch();
+		switch (ch) {
+		case 'w':
+		case KEY_UP:
+			y--;
+			system("CLS");
+			print_maze();
+
+
+
+			break;
+		case 's':
+		case KEY_DOWN:
+			y++;
+			system("CLS");
+			print_maze();
+
+
+
+			break;
+		case 'd':
+		case KEY_RIGHT:
+			x += 2;
+			system("CLS");
+			print_maze();
+
+
+
+			break;
+		case 'a':
+		case KEY_LEFT:
+			x -= 2;
+			system("CLS");
+			print_maze();
+
+
+
+			break;
+		case 'x':
+			exit(0);
+			break;
+		}
+		gotoxy(x, y);
+		cout << "*";
+	}
+}
+
+
+
+
+void checkWall() {
+	int x = 1, y = 3;
+	system("CLS");
+
+
+
 label:
 	system("CLS");
 	print_maze();
-	if (x == 16 && y == 7) {
-		system("CLS");
-		cout << "Congratulations!";
-		exit(0);
-	}
 
 
-	if (x == 2)
-		x = 4;
-	if (x == 6 && y == 3) {
-		x -= 2;
-		y = 3;
-	}
 
-	if (x == 16)
-		x = 14;
-	if (y == 1)
-		y = 2;
-	if (y == 8)
-		y = 7;
+	bool flag = true;
 	gotoxy(x, y);
-	cout << "0";
-	ch = _getch();
-	switch (ch) {
-	case 'w': y--;
-		break;
-	case 's': y++;
-		break;
-	case 'd': x += 2;
-		break;
-	case 'a': x -= 2;
-		break;
-	case KEY_UP: y--;
-		break;
-	case KEY_DOWN: y++;
-		break;
-	case KEY_RIGHT: x += 2;
-		break;
-	case KEY_LEFT: x -= 2;
-		break;
-	case 'x': exit(0);
-		break;
-	}
-	goto  label;
+	cout << "*";
 
+
+
+	do {
+		movingObject(x, y);
+
+		if (x == 15 && y == 7) {
+			system("CLS");
+			cout << "Congratulations!";
+			exit(0);
+			flag = false;
+		}
+
+
+
+		if (x == 5)
+		{
+			x = 4;
+		}
+
+		if (x == 6 && y == 3) {
+			x -= 2;
+			y = 3;
+		}
+
+
+
+		if (x == 16) {
+			x = 14;
+		}
+
+		if (y == 1)
+		{
+			y = 2;
+		}
+
+		if (y == 8)
+		{
+			y = 7;
+		}
+
+		goto label;
+	} while (flag == true);
 }
