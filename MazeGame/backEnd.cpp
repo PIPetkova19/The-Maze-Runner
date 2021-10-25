@@ -1,14 +1,12 @@
 #include <iostream>
-#include <windows.h> // For SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c)
-#include <conio.h> // For _getch()
-using namespace std;
-
-// ASCII codes for arrow keys
+#include<process.h>
+#include<windows.h>
+#include<conio.h>
 #define KEY_UP 72
 #define KEY_DOWN 80
 #define KEY_LEFT 75
 #define KEY_RIGHT 77
-
+using namespace std;
 int gotoxy(int x, int y)
 {
 	//Defines the coordinates of a character cell in a console screen buffer
@@ -19,10 +17,6 @@ int gotoxy(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
 	return 0;
 }
-
-
-
-
 void print_maze() {
 	char maze[8][8] = {
 	{'#','#','#','#','#','#','#','#'},
@@ -34,71 +28,67 @@ void print_maze() {
 	{'#','#','.','#','#','.','.','.'},
 	{'#','#','#','#','#','#','#','#'}
 	};
+	cout << endl;
+
 	for (int i = 0; i <= 7; i++) {
+		cout << "  ";
 		for (int j = 0; j <= 7; j++) {
 			cout << maze[i][j] << " ";
 		}
 		cout << endl;
 	}
-
-
-
-	gotoxy(35, 5);
-	cout << "PRESS 'i' TO READ INSTRUCTIONS";
-	gotoxy(40, 7);
-	cout << "PRESS 'm' TO EXIT";
 }
-
-
-void movingObject() {
-		int x = 0, y = 2;
-		char ch;
-		print_maze();
-		gotoxy(0, 2);
-		cout << "*";
-
-		while (true)
-		{
-			ch = _getch(); // Returns the ASCII value of the key pressed by the user as an input
-
-			switch (ch)
-			{
-			case 'a': // For "wasd"
-			case KEY_LEFT: // For arrow keys
-				system("CLS");
-				x--;
-				system("CLS");
-				print_maze();
-				break;
-
-			case 's':
-			case KEY_DOWN:
-				y++;
-				system("CLS");
-				print_maze();
-				break;
-
-
-			case 'w':
-			case KEY_UP:
-				y--;
-				system("CLS");
-				print_maze();
-				break;
-
-
-			case 'd':
-			case KEY_RIGHT:
-				x++;
-				system("CLS");
-				print_maze();
-				break;
-
-			default:
-				break;
-			}
-			gotoxy(x, y);
-			cout << "*"; // The object we are moving
-		}
+int main()
+{
+	int x = 2, y = 3;
+	system("CLS");
+	char ch;
+label:
+	system("CLS");
+	print_maze();
+	if (x == 16 && y == 7) {
+		system("CLS");
+		cout << "Congratulations!";
+		exit(0);
 	}
 
+
+	if (x == 2)
+		x = 4;
+	if (x == 6 && y == 3) {
+		x -= 2;
+		y = 3;
+	}
+
+	if (x == 16)
+		x = 14;
+	if (y == 1)
+		y = 2;
+	if (y == 8)
+		y = 7;
+	gotoxy(x, y);
+	cout << "0";
+	ch = _getch();
+	switch (ch) {
+	case 'w': y--;
+		break;
+	case 's': y++;
+		break;
+	case 'd': x += 2;
+		break;
+	case 'a': x -= 2;
+		break;
+	case KEY_UP: y--;
+		break;
+	case KEY_DOWN: y++;
+		break;
+	case KEY_RIGHT: x += 2;
+		break;
+	case KEY_LEFT: x -= 2;
+		break;
+	case 'x': exit(0);
+		break;
+	}
+	goto  label;
+
+}
