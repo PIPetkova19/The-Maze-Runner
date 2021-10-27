@@ -6,7 +6,6 @@
 #include "levelOne.h"
 
 
-
 #define KEY_UP 72
 #define KEY_DOWN 80
 #define KEY_LEFT 75
@@ -21,17 +20,14 @@ void levelTwo()
 	int x = 0, y = 3;
 	system("CLS");
 	char ch;
+
 label:
 	system("CLS");
 	print_maze();
 
-
-
-
 	gotoxy(x, y);
 	cout << "0";
 	ch = _getch();
-
 
 
 	if (x == 14 && y == 7)
@@ -40,8 +36,6 @@ label:
 		cout << "Congratulations! You passed level two";
 		exit(0);
 	}
-
-
 
 	switch (ch) {
 
@@ -71,22 +65,16 @@ label:
 		}
 
 
-
 		if (y == 1)
 		{
 			y = 2;
 		}
 
-
-
 		break;
-
-
 
 	case KEY_DOWN:
 	case 's':
 		y++;
-
 
 
 		if ((x == 4 && y == 3) || (x == 6 && y == 3) || (x == 8 && y == 3))
@@ -134,8 +122,6 @@ label:
 		}
 		break;
 
-
-
 	case KEY_RIGHT:
 	case 'a':
 		x += 2;
@@ -163,12 +149,7 @@ label:
 			x = 12;
 		}
 
-
-
-
 		break;
-
-
 
 	case KEY_LEFT:
 	case 'd':
@@ -220,7 +201,6 @@ label:
 			x = 2;
 		}
 		break;
-
 
 
 	case 'x':

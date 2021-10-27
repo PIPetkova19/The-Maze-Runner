@@ -5,7 +5,6 @@
 #include<string>
 #include "levelTwo.h"
 
-
 #define KEY_UP 72
 #define KEY_DOWN 80
 #define KEY_LEFT 75
@@ -13,10 +12,7 @@
 #define KEY_SPACE 32
 #define KEY_ENTER 13
 
-
-
 using namespace std;
-
 
 
 int gotoxy(int x, int y)
@@ -29,6 +25,8 @@ int gotoxy(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
 	return 0;
 }
+
+
 void print_maze() {
 	char maze[8][8] = {
 	{'#','#','#','#','#','#','#','#'},
@@ -82,8 +80,6 @@ label:
 	print_maze();
 
 
-
-
 	gotoxy(x, y);
 	cout << "0";
 	ch = _getch();
@@ -95,8 +91,6 @@ label:
 	}
 
 	switch (ch) {
-
-
 
 	case KEY_UP:
 	case 'w':
@@ -128,11 +122,7 @@ label:
 			y = 2;
 		}
 
-
-
 		break;
-
-
 
 	case KEY_DOWN:
 	case 's':
@@ -186,7 +176,6 @@ label:
 		break;
 
 
-
 	case KEY_RIGHT:
 	case 'a':
 		x += 2;
@@ -214,11 +203,7 @@ label:
 			x = 12;
 		}
 
-
-
-
 		break;
-
 
 
 	case KEY_LEFT:
