@@ -35,7 +35,9 @@ void print_maze() {
 
 
 	for (int i = 0; i <= 7; i++) {
-		cout << " ";
+
+
+
 		for (int j = 0; j <= 7; j++) {
 			cout << maze[i][j] << " ";
 		}
@@ -45,120 +47,202 @@ void print_maze() {
 
 
 
-
-void movingObject(int x, int y) {
-	char ch;
-
-
-
-	while (true)
-	{
-		ch = _getch();
-		switch (ch) {
-		case 'w':
-		case KEY_UP:
-			y--;
-			system("CLS");
-			print_maze();
-
-
-
-			break;
-		case 's':
-		case KEY_DOWN:
-			y++;
-			system("CLS");
-			print_maze();
-
-
-
-			break;
-		case 'd':
-		case KEY_RIGHT:
-			x += 2;
-			system("CLS");
-			print_maze();
-
-
-
-			break;
-		case 'a':
-		case KEY_LEFT:
-			x -= 2;
-			system("CLS");
-			print_maze();
-
-
-
-			break;
-		case 'x':
-			exit(0);
-			break;
-		}
-		gotoxy(x, y);
-		cout << "*";
-	}
-}
-
-
-
-
-void checkWall() {
-	int x = 1, y = 3;
+void levelOne()
+{
+	int x = 0, y = 3;
 	system("CLS");
-
-
-
+	char ch;
 label:
 	system("CLS");
 	print_maze();
+	if (x == 15 && y == 7) {
+		system("CLS");
+		cout << "Congratulations!";
+		exit(0);
+	}
 
 
 
-	bool flag = true;
+
+
 	gotoxy(x, y);
-	cout << "*";
+	cout << "0";
+	ch = _getch();
+	switch (ch) {
 
-
-
-	do {
-		movingObject(x, y);
-
-		if (x == 15 && y == 7) {
-			system("CLS");
-			cout << "Congratulations!";
-			exit(0);
-			flag = false;
-		}
-
-
-
-		if (x == 5)
+	case KEY_UP:
+	case 'w':
+		y--;
+		if (x == 12 && y == 3)
 		{
-			x = 4;
+			y = 4;
+		}
+		if ((x == 4 && y == 3) || (x == 6 && y == 3))
+		{
+			y = 4;
+		}
+		if (x == 4 && y == 5)
+		{
+			y = 6;
 		}
 
-		if (x == 6 && y == 3) {
-			x -= 2;
-			y = 3;
+		if ((x == 10 && y == 5) || (x == 8 && y == 5))
+		{
+			y = 6;
 		}
 
 
-
-		if (x == 16) {
-			x = 14;
-		}
 
 		if (y == 1)
 		{
 			y = 2;
 		}
 
+
+
+		break;
+
+
+
+	case KEY_DOWN:
+	case 's':
+		y++;
+
+
+
+		if ((x == 4 && y == 3) || (x == 6 && y == 3) || (x == 8 && y == 3))
+		{
+			y = 2;
+		}
+
+
+
+		if (x == 12 && y == 3)
+		{
+			y = 2;
+		}
+
+
+
+		if ((x == 4 && y == 5) || (x == 6 && y == 5))
+		{
+			y = 4;
+		}
+		if (x == 2 && y == 7)
+		{
+			y = 6;
+		}
+
+		if (x == 10 && y == 5)
+		{
+			y = 4;
+		}
+
+		if (x == 8 && y == 7)
+		{
+			y = 6;
+		}
+
+
+
 		if (y == 8)
 		{
 			y = 7;
 		}
+		break;
 
-		goto label;
-	} while (flag == true);
+
+
+	case KEY_RIGHT:
+	case 'a':
+		x += 2;
+		if ((x == 4 && y == 3) || (x == 4 && y == 5))
+		{
+			x = 2;
+		}
+		if (x == 12 && y == 3)
+		{
+			x = 10;
+		}
+		if (x == 8 && y == 4)
+		{
+			x = 6;
+		}
+		if ((x == 6 && y == 6) || (x == 6 && y == 7))
+		{
+			x = 4;
+		}
+
+
+
+		if (x == 14)
+		{
+			x = 12;
+		}
+
+
+
+		break;
+
+
+
+	case KEY_LEFT:
+	case 'd':
+		x -= 2;
+
+
+
+		if (x == 8 && y == 3)
+		{
+			x = 10;
+		}
+
+
+
+		if (x == 8 && y == 4)
+		{
+			x = 10;
+		}
+
+
+
+		if (x == 2 && y == 7)
+		{
+			x = 4;
+		}
+		if (x == 10 && y == 5)
+		{
+			x = 12;
+		}
+
+
+
+		if (x == 6 && y == 6)
+		{
+			x = 8;
+		}
+
+
+
+		if (x == 8 && y == 7)
+		{
+			x = 10;
+		}
+
+
+
+		if (x == 0)
+		{
+			x = 2;
+		}
+		break;
+
+
+
+	case 'x':
+
+		exit(0);
+		break;
+	}
+	goto label;
 }
