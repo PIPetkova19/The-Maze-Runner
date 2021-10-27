@@ -6,7 +6,15 @@
 #define KEY_DOWN 80
 #define KEY_LEFT 75
 #define KEY_RIGHT 77
+#define KEY_SPACE 32
+#define KEY_ENTER 13
+
+
+
 using namespace std;
+
+
+
 int gotoxy(int x, int y)
 {
 	//Defines the coordinates of a character cell in a console screen buffer
@@ -94,6 +102,8 @@ label:
 			y = 6;
 		}
 
+
+
 		if ((x == 10 && y == 5) || (x == 8 && y == 5))
 		{
 			y = 6;
@@ -141,10 +151,14 @@ label:
 			y = 6;
 		}
 
+
+
 		if (x == 10 && y == 5)
 		{
 			y = 4;
 		}
+
+
 
 		if (x == 8 && y == 7)
 		{
@@ -187,6 +201,7 @@ label:
 		{
 			x = 12;
 		}
+
 
 
 
@@ -248,6 +263,8 @@ label:
 
 
 	case 'x':
+	case KEY_SPACE:
+	case KEY_ENTER:
 		system("CLS");
 		cout << "Game over";
 		exit(0);
