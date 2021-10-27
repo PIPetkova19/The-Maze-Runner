@@ -2,6 +2,11 @@
 #include<process.h>
 #include<windows.h>
 #include<conio.h>
+#include<string>
+#include "levelOne.h"
+
+
+
 #define KEY_UP 72
 #define KEY_DOWN 80
 #define KEY_LEFT 75
@@ -9,53 +14,9 @@
 #define KEY_SPACE 32
 #define KEY_ENTER 13
 
-
-
 using namespace std;
 
-
-
-int gotoxy(int x, int y)
-{
-	//Defines the coordinates of a character cell in a console screen buffer
-	COORD c;
-	c.X = x;
-	c.Y = y;
-	// Sets the cursor position in the specified console screen buffer
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
-	return 0;
-}
-void print_maze() {
-	char maze[8][8] = {
-	{'#','#','#','#','#','#','#','#'},
-	{'#','.','.','.','.','.','.','#'},
-	{'.','.','#','#','#','.','#','#'},
-	{'#','.','.','.','#','.','.','#'},
-	{'#','.','#','#','#','#','.','#'},
-	{'#','.','.','#','.','.','.','#'},
-	{'#','#','.','#','#','.','.','.'},
-	{'#','#','#','#','#','#','#','#'}
-	};
-	cout << endl;
-
-
-
-
-
-	for (int i = 0; i <= 7; i++) {
-
-
-
-		for (int j = 0; j <= 7; j++) {
-			cout << maze[i][j] << " ";
-		}
-		cout << endl;
-	}
-}
-
-
-
-void levelOne()
+void levelTwo()
 {
 	int x = 0, y = 3;
 	system("CLS");
@@ -76,7 +37,7 @@ label:
 	if (x == 14 && y == 7)
 	{
 		system("CLS");
-		cout << "Congratulations! You passed level one";
+		cout << "Congratulations! You passed level two";
 		exit(0);
 	}
 
