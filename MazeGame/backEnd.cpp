@@ -240,7 +240,8 @@ label:
 
 
 	case 'x':
-
+		system("CLS");
+		cout << "Game over";
 		exit(0);
 		break;
 	}
