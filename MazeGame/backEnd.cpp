@@ -55,12 +55,6 @@ void levelOne()
 label:
 	system("CLS");
 	print_maze();
-	if (x == 15 && y == 7) {
-		system("CLS");
-		cout << "Congratulations!";
-		exit(0);
-	}
-
 
 
 
@@ -68,7 +62,21 @@ label:
 	gotoxy(x, y);
 	cout << "0";
 	ch = _getch();
+
+
+
+	if (x == 14 && y == 7)
+	{
+		system("CLS");
+		cout << "Congratulations! You passed level one";
+		exit(0);
+	}
+
+
+
 	switch (ch) {
+
+
 
 	case KEY_UP:
 	case 'w':
@@ -175,7 +183,7 @@ label:
 
 
 
-		if (x == 14)
+		if ((x == 14) && (y != 7))
 		{
 			x = 12;
 		}
