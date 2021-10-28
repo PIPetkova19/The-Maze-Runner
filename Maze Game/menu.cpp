@@ -65,8 +65,8 @@ void menu() {
 		{
 			switch (counter)
 			{
-			case 1: 
-				levelOne(); 
+			case 1:
+				levelOne();
 				break;
 				//
 			case 3:

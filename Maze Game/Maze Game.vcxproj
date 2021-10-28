@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{3B1F24BE-608A-4703-9015-44F528BCE671}</ProjectGuid>
+    <ProjectGuid>{D20A5D1A-03CA-4DE6-A530-59018C455AA7}</ProjectGuid>
     <RootNamespace>MazeGame</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -140,7 +140,6 @@
   <ItemGroup>
     <ClCompile Include="levelOne.cpp" />
     <ClCompile Include="levelTwo.cpp" />
-    <ClCompile Include="levlOne.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
   </ItemGroup>
