@@ -1,4 +1,3 @@
 #pragma once
-void print_maze();
+void print_maze2();
 void levelTwo();
-int gotoxy(int x, int y);
