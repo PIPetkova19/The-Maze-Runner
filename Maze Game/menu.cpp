@@ -1,4 +1,5 @@
 #include <iostream>
+#include "menu.h"
 #include "levelOne.h"
 #include "levelTwo.h"
 #include <windows.h> // For color functions
@@ -68,7 +69,14 @@ void menu() {
 			case 1:
 				levelOne();
 				break;
-				//
+			case 2:
+				if (key == 13) {
+					system("cls");
+					cout << "You will be playing with '0' and you will have to complete the maze to move to the next level" << endl;
+					cout << "Each level gets more harder and complex so pay attention" << endl;
+					cout << "Don't bump into walls in order to complete the level" << endl;
+					cout << "You can use your arrow keys to be able to move your player" << endl;
+				}
 			case 3:
 				exit(0);
 				system("cls");
