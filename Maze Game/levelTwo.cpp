@@ -41,8 +41,15 @@ void print_maze2() {
 		for (int j = 0; j < 16; j++) {
 			cout << maze[i][j] << " ";
 		}
+		cout << "|";
+		if (i == 7)
+			cout << "\tL E V E L - 2";
 		cout << endl;
 	}
+	for (int i = 0; i < 16; i++) {
+		cout << "__";
+	}
+	cout << endl;
 }
 
 
