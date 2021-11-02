@@ -15,7 +15,7 @@
 using namespace std;
 
 
-void print_maze2() {
+void printMazeTwo() {
 	char maze[16][16] = {
 		{'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'},
 		{'.','.','.','.','.','#','.','#','.','.','#','.','.','.','.','#'},
@@ -61,7 +61,7 @@ void levelTwo()
 	string answer;
 label:
 	system("CLS");
-	print_maze2();
+	printMazeTwo();
 
 
 	gotoxy(x, y);

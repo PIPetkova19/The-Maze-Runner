@@ -1,3 +1,3 @@
 #pragma once
-void print_maze2();
+void printMazeTwo();
 void levelTwo();

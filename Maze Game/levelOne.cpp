@@ -27,7 +27,7 @@ int gotoxy(int x, int y)
 }
 
 
-void print_maze() {
+void printMazeOne() {
 	char maze[8][8] = {
 		{'#','#','#','#','#','#','#','#'},
 		{'#','.','.','.','.','.','.','#'},
@@ -84,7 +84,7 @@ void levelOne()
 	string answer;
 label:
 	system("CLS");
-	print_maze();
+	printMazeOne();
 
 
 	gotoxy(x, y);
