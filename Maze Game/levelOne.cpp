@@ -261,7 +261,7 @@ label:
 
 
 	case KEY_RIGHT:
-	case 'a':
+	case 'd':
 		x += 2;
 		if ((x == 4 && y == 3) || (x == 4 && y == 5))
 		{
@@ -291,7 +291,7 @@ label:
 
 
 	case KEY_LEFT:
-	case 'd':
+	case 'a':
 		x -= 2;
 
 
