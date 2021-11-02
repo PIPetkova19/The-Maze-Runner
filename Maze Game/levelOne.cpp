@@ -88,7 +88,7 @@ label:
 
 
 	gotoxy(x, y);
-	cout << "0";
+	cout << static_cast<char>(1);
 	ch = _getch();
 
 
