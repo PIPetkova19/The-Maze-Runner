@@ -127,7 +127,9 @@ void changeLevels(string answer)
 {
 
 	system("CLS");
+	gotoxy(40, 10);
 	cout << "Congratulations! You passed level one" << endl;
+	gotoxy(40, 12);
 	cout << "Do you want to start a new game: ";
 	getline(cin, answer);
 	if (answer == "Yes" || answer == "yes" || answer == "Y" || answer == "y")
@@ -136,7 +138,11 @@ void changeLevels(string answer)
 	}
 	else {
 		system("CLS");
+
+		gotoxy(40, 2);
 		cout << "We hope you enjoyed our game!!!";
+		cout << endl;
+		cout << endl;
 		exit(0);
 	}
 
@@ -336,7 +342,10 @@ label:
 	case KEY_SPACE:
 	case KEY_ENTER:
 		system("CLS");
-		cout << "Game over";
+		gotoxy(50, 2);
+		cout << "Game Over";
+		cout << endl;
+		cout << endl;
 		exit(0);
 		break;
 	}

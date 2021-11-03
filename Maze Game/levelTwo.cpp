@@ -143,8 +143,24 @@ label:
 		x += 2;
 		if (x == 30 && y == 14) {
 			system("CLS");
-			cout << "Congratulations!";
-			exit(0);
+			gotoxy(40, 10);
+			cout << "Congratulations! You passed level two" << endl;
+			gotoxy(40, 12);
+			cout << "Do you want to start a new game: ";
+			getline(cin, answer);
+			if (answer == "Yes" || answer == "yes" || answer == "Y" || answer == "y")
+			{
+				levelTwo();
+			}
+			else {
+				system("CLS");
+
+				gotoxy(40, 2);
+				cout << "We hope you enjoyed our game!!!";
+				cout << endl;
+				cout << endl;
+				exit(0);
+			}
 		}
 		if (x == 30)
 			x = 28;
@@ -223,7 +239,10 @@ label:
 	case KEY_SPACE:
 	case KEY_ENTER:
 		system("CLS");
-		cout << "Game over";
+		gotoxy(50, 2);
+		cout << "Game Over";
+		cout << endl;
+		cout << endl;
 		exit(0);
 		break;
 	}
