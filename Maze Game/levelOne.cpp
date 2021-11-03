@@ -154,7 +154,7 @@ label:
 
 
 	gotoxy(x, y);
-	cout << static_cast<char>(1);
+	cout << static_cast<char>(2);
 	ch = _getch();
 
 
