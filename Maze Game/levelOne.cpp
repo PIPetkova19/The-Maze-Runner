@@ -33,6 +33,7 @@ void printMazeOne() {
 	{
 		maze[i] = new char[8];
 	}
+	//Uses extended ASCII table
 	maze[0][0] = static_cast<char>(254);
 	maze[0][1] = static_cast<char>(254);
 	maze[0][2] = static_cast<char>(254);
@@ -106,7 +107,8 @@ void printMazeOne() {
 		for (int j = 0; j <= 7; j++) {
 			cout << maze[i][j] << " ";
 		}
-		cout << "|";
+		//Uses extended ASCII table
+		cout <<" "<< static_cast<char>(179);
 		if (i == 3)
 			cout << "\tL E V E L - 1";
 		cout << endl;
@@ -160,6 +162,7 @@ label:
 
 
 	gotoxy(x, y);
+	//Uses extended ASCII table
 	cout << static_cast<char>(2);
 	ch = _getch();
 

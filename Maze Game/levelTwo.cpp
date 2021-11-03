@@ -41,9 +41,10 @@ void printMazeTwo() {
 		for (int j = 0; j < 16; j++) {
 			cout << maze[i][j] << " ";
 		}
-		cout << "|";
+		//Uses extended ASCII table
+		cout << static_cast<char>(179);
 		if (i == 7)
-			cout << "\tL E V E L - 2";
+			cout <<" "<< "\tL E V E L - 2";
 		cout << endl;
 	}
 	for (int i = 0; i < 16; i++) {
@@ -65,6 +66,7 @@ label:
 
 
 	gotoxy(x, y);
+	//Uses extended ASCII table
 	cout << static_cast<char>(2);
 	ch = _getch();
 
