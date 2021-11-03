@@ -33,63 +33,62 @@ void printMazeOne() {
 	{
 		maze[i] = new char[8];
 	}
-	//Uses extended ASCII table
 	maze[0][0] = static_cast<char>(254);
 	maze[0][1] = static_cast<char>(254);
 	maze[0][2] = static_cast<char>(254);
 	maze[0][3] = static_cast<char>(254);
 	maze[0][4] = static_cast<char>(254);
-	maze[0][5] = static_cast<char>(254) ;
+	maze[0][5] = static_cast<char>(254);
 	maze[0][6] = static_cast<char>(254);
 	maze[0][7] = static_cast<char>(254);
 	maze[1][0] = static_cast<char>(254);
-	maze[1][1] =  '.' ;
-	maze[1][2] =  '.' ;
-	maze[1][3] =  '.' ;
-	maze[1][4] =  '.' ;
-	maze[1][5] =  '.' ;
-	maze[1][6] =  '.' ;
+	maze[1][1] = '.';
+	maze[1][2] = '.';
+	maze[1][3] = '.';
+	maze[1][4] = '.';
+	maze[1][5] = '.';
+	maze[1][6] = '.';
 	maze[1][7] = static_cast<char>(254);
-	maze[2][0] =  '.' ;
-	maze[2][1] =  '.' ;
+	maze[2][0] = '.';
+	maze[2][1] = '.';
 	maze[2][2] = static_cast<char>(254);
 	maze[2][3] = static_cast<char>(254);
 	maze[2][4] = static_cast<char>(254);
-	maze[2][5] =  '.' ;
+	maze[2][5] = '.';
 	maze[2][6] = static_cast<char>(254);
 	maze[2][7] = static_cast<char>(254);
 	maze[3][0] = static_cast<char>(254);
-	maze[3][1] =  '.' ;
-	maze[3][2] =  '.' ;
-	maze[3][3] =  '.' ;
+	maze[3][1] = '.';
+	maze[3][2] = '.';
+	maze[3][3] = '.';
 	maze[3][4] = static_cast<char>(254);
-	maze[3][5] =  '.' ;
-	maze[3][6] =  '.' ;
+	maze[3][5] = '.';
+	maze[3][6] = '.';
 	maze[3][7] = static_cast<char>(254);
 	maze[4][0] = static_cast<char>(254);
-	maze[4][1] =  '.' ;
+	maze[4][1] = '.';
 	maze[4][2] = static_cast<char>(254);
 	maze[4][3] = static_cast<char>(254);
 	maze[4][4] = static_cast<char>(254);
 	maze[4][5] = static_cast<char>(254);
-	maze[4][6] =  '.' ;
+	maze[4][6] = '.';
 	maze[4][7] = static_cast<char>(254);
 	maze[5][0] = static_cast<char>(254);
-	maze[5][1] =  '.' ;
-	maze[5][2] =  '.' ;
+	maze[5][1] = '.';
+	maze[5][2] = '.';
 	maze[5][3] = static_cast<char>(254);
-	maze[5][4] =  '.' ;
-	maze[5][5] =  '.' ;
-	maze[5][6] =  '.' ;
+	maze[5][4] = '.';
+	maze[5][5] = '.';
+	maze[5][6] = '.';
 	maze[5][7] = static_cast<char>(254);
 	maze[6][0] = static_cast<char>(254);
 	maze[6][1] = static_cast<char>(254);
-	maze[6][2] =  '.' ;
+	maze[6][2] = '.';
 	maze[6][3] = static_cast<char>(254);
 	maze[6][4] = static_cast<char>(254);
-	maze[6][5] =  '.' ;
-	maze[6][6] =  '.' ;
-	maze[6][7] =  '.' ;	
+	maze[6][5] = '.';
+	maze[6][6] = '.';
+	maze[6][7] = '.';
 	maze[7][0] = static_cast<char>(254);
 	maze[7][1] = static_cast<char>(254);
 	maze[7][2] = static_cast<char>(254);
@@ -107,8 +106,7 @@ void printMazeOne() {
 		for (int j = 0; j <= 7; j++) {
 			cout << maze[i][j] << " ";
 		}
-		//Uses extended ASCII table
-		cout <<" "<< static_cast<char>(179);
+		cout << "|";
 		if (i == 3)
 			cout << "\tL E V E L - 1";
 		cout << endl;
@@ -162,7 +160,6 @@ label:
 
 
 	gotoxy(x, y);
-	//Uses extended ASCII table
 	cout << static_cast<char>(2);
 	ch = _getch();
 

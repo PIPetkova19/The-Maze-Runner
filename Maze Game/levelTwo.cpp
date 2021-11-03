@@ -4,6 +4,7 @@
 #include<conio.h>
 #include<string>
 #include"levelOne.h"
+#include"levelThree.h"
 
 #define KEY_UP 72
 #define KEY_DOWN 80
@@ -41,10 +42,9 @@ void printMazeTwo() {
 		for (int j = 0; j < 16; j++) {
 			cout << maze[i][j] << " ";
 		}
-		//Uses extended ASCII table
-		cout << static_cast<char>(179);
+		cout << "|";
 		if (i == 7)
-			cout <<" "<< "\tL E V E L - 2";
+			cout << "\tL E V E L - 2";
 		cout << endl;
 	}
 	for (int i = 0; i < 16; i++) {
@@ -66,7 +66,6 @@ label:
 
 
 	gotoxy(x, y);
-	//Uses extended ASCII table
 	cout << static_cast<char>(2);
 	ch = _getch();
 
@@ -152,7 +151,7 @@ label:
 			getline(cin, answer);
 			if (answer == "Yes" || answer == "yes" || answer == "Y" || answer == "y")
 			{
-				levelTwo();
+				levelThree();
 			}
 			else {
 				system("CLS");
