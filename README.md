@@ -58,7 +58,7 @@ You can play our maze game with your arrow keys and 'wasd' combination in order 
  - Open cmd with Windows + "R"; <br>
  - Clone the repo with the command: <br>
 ```bash
-git clone https://github.com/NDPeshev19/string-project-2021.git
+https://github.com/PIPetkova19/The-Maze-Runner.git
 ```
  
 - Or you can download it from the site.
