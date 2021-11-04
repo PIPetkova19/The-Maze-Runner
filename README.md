@@ -1,4 +1,4 @@
-<img src= "images/logo1.gif" width="900">
+<img src= "Logo/logo.jpg" width="500">
 
 ---
 
