@@ -21,17 +21,16 @@ You can see our presentation here:
 Name | Email
 -------|------------
 Petya Petkova | PIPetkova19@codingburgas.bg
-Dimityr Grudobv | DHGrudov19@codingburgas.bg
+Dimityr Grudov | DHGrudov19@codingburgas.bg
 Kameliya Yaneva | KKYaneva19@codingburgas.bg
 Vesela Dekova | VBDekova19@codingburgas.bg
 
 
  
 
-## <img src = "https://user-images.githubusercontent.com/63718742/137624023-85e28503-7a5c-46df-98eb-962b103cf845.png" width = "25"> Used technologies <a name = "used-technologies"></a>
+##  Used technologies <a name = "used-technologies"></a>
 
  
-
 
 <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg/2203px-Microsoft_Office_Excel_%282019%E2%80%93present%29.svg.png" width= "23"> Excel <br>
 <img src = "https://logodownload.org/wp-content/uploads/2018/10/word-logo-1-1.png" width= "25"> Word <br>
@@ -50,7 +49,7 @@ You can play our maze game with your arrow keys and 'wasd' combination in order 
 
  
 
-## <img src = "https://user-images.githubusercontent.com/63718742/137624023-85e28503-7a5c-46df-98eb-962b103cf845.png" width = "25"> Installation
+##  Installation
 <a name = "installation"></a>
 
 
