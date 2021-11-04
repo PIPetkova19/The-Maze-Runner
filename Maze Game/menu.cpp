@@ -26,19 +26,33 @@ void color(int color)
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
 
+void instructions()
+{
+	system("cls");
+	cout << endl;
+	cout << "                                                      INSTRUCTIONS" << endl << endl << endl;
+	cout << "                                You will be playing with '0' and you will have to complete" << endl;
+	cout << "                                the maze to move to the next level" << endl;
+	cout << "                                Each level gets more harder and complex so pay attention" << endl;
+	cout << "                                Don't bump into walls in order to complete the level" << endl;
+	cout << "                                You can use your arrow keys to be able to move your player" << endl << endl << endl;
+	system("pause");
+	system("cls");
+
+	menu();
+}
 
 //Calls Menu
 void menu() {
-	int Set[] = { 7,7,7 };
-	int counter = 2;
+	int Set[] = { 12,7,7 };
+	int counter = 1;
 	char key;
+
 
 	cout << endl;
 	cout << " ___________________________ Menu ___________________________" << endl;
-
-	for (int i = 0;;)
+	for (;;)
 	{
-		key = _getch();
 
 		gotoxy(10, 5);
 		color(Set[0]);
@@ -52,34 +66,34 @@ void menu() {
 		color(Set[2]);
 		cout << " 3.Exit" << endl;
 
+		key = _getch();
+
 		//Move cursor through the options
-		if (key == 72 && (counter >= 2 && counter <= 3))
+		if (key == 72 && (counter >= 1 && counter <= 3))
 		{
 			counter--;
 		}
-		if (key == 80 && (counter >= 1 && counter <= 2))
+		if (key == 80 && (counter >= 1 && counter <= 3))
 		{
 			counter++;
 		}
 
-		if (key == 13)
-		{
+		if (key == 13 || key == 77) {
 			switch (counter)
 			{
 			case 1:
 				levelOne();
 				break;
+
 			case 2:
-				if (key == 13) {
-					system("cls");
-					cout << "You will be playing with '0' and you will have to complete the maze to move to the next level" << endl;
-					cout << "Each level gets more harder and complex so pay attention" << endl;
-					cout << "Don't bump into walls in order to complete the level" << endl;
-					cout << "You can use your arrow keys to be able to move your player" << endl;
-				}
+				instructions();
+				break;
+
 			case 3:
-				exit(0);
 				system("cls");
+				cout << endl << endl << "                                         We hope you enjoyed our game!" << endl << endl << endl;
+				exit(0);
+				break;
 			}
 		}
 
