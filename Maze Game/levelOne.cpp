@@ -14,7 +14,6 @@
 
 using namespace std;
 
-
 int gotoxy(int x, int y)
 {
 	//Defines the coordinates of a character cell in a console screen buffer
@@ -26,9 +25,9 @@ int gotoxy(int x, int y)
 	return 0;
 }
 
-
 void printMazeOne() {
 	char** maze = new char* [8];
+
 	for (int i = 0; i < 8; i++)
 	{
 		maze[i] = new char[8];
@@ -102,15 +101,17 @@ void printMazeOne() {
 
 
 	for (int i = 0; i <= 7; i++) {
-
 		for (int j = 0; j <= 7; j++) {
 			cout << maze[i][j] << " ";
 		}
 		cout << "|";
 		if (i == 3)
+		{
 			cout << "\tL E V E L - 1";
+		}
 		cout << endl;
 	}
+
 	for (int i = 0; i <= 7; i++) {
 		cout << "__";
 	}
@@ -123,7 +124,7 @@ void printMazeOne() {
 	delete[] maze;
 }
 
-void changeLevels(string answer)
+void changeLevelOne(string answer)
 {
 
 	system("CLS");
@@ -132,13 +133,14 @@ void changeLevels(string answer)
 	gotoxy(40, 12);
 	cout << "Do you want to start a new game: ";
 	getline(cin, answer);
+
 	if (answer == "Yes" || answer == "yes" || answer == "Y" || answer == "y")
 	{
 		levelTwo();
 	}
+
 	else {
 		system("CLS");
-
 		gotoxy(40, 2);
 		cout << "We hope you enjoyed our game!!!";
 		cout << endl;
@@ -166,7 +168,7 @@ label:
 
 	if (x == 14 && y == 7)
 	{
-		changeLevels(answer);
+		changeLevelOne(answer);
 	}
 
 	switch (ch) {
@@ -187,14 +189,10 @@ label:
 			y = 6;
 		}
 
-
-
 		if ((x == 10 && y == 5) || (x == 8 && y == 5))
 		{
 			y = 6;
 		}
-
-
 
 		if (y == 1)
 		{
@@ -207,75 +205,67 @@ label:
 	case 's':
 		y++;
 
-
-
 		if ((x == 4 && y == 3) || (x == 6 && y == 3) || (x == 8 && y == 3))
 		{
 			y = 2;
 		}
-
-
 
 		if (x == 12 && y == 3)
 		{
 			y = 2;
 		}
 
-
-
 		if ((x == 4 && y == 5) || (x == 6 && y == 5))
 		{
 			y = 4;
 		}
+
 		if (x == 2 && y == 7)
 		{
 			y = 6;
 		}
-
-
 
 		if (x == 10 && y == 5)
 		{
 			y = 4;
 		}
 
-
-
 		if (x == 8 && y == 7)
 		{
 			y = 6;
 		}
 
-
-
 		if (y == 8)
 		{
 			y = 7;
 		}
+
 		break;
 
 
 	case KEY_RIGHT:
 	case 'd':
+
 		x += 2;
 		if ((x == 4 && y == 3) || (x == 4 && y == 5))
 		{
 			x = 2;
 		}
+
 		if (x == 12 && y == 3)
 		{
 			x = 10;
 		}
+
 		if (x == 8 && y == 4)
 		{
 			x = 6;
 		}
+
 		if ((x == 6 && y == 6) || (x == 6 && y == 7))
 		{
 			x = 4;
 		}
-
-
 
 		if ((x == 14) && (y != 7))
 		{
@@ -289,58 +279,48 @@ label:
 	case 'a':
 		x -= 2;
 
-
-
 		if (x == 8 && y == 3)
 		{
 			x = 10;
 		}
-
-
 
 		if (x == 8 && y == 4)
 		{
 			x = 10;
 		}
 
-
-
 		if (x == 2 && y == 7)
 		{
 			x = 4;
 		}
+
 		if (x == 10 && y == 5)
 		{
 			x = 12;
 		}
-
-
 
 		if (x == 6 && y == 6)
 		{
 			x = 8;
 		}
 
-
-
 		if (x == 8 && y == 7)
 		{
 			x = 10;
 		}
 
-
-
 		if (x == 0)
 		{
 			x = 2;
 		}
-		break;
 
+		break;
 
 
 	case 'x':
 	case KEY_SPACE:
 	case KEY_ENTER:
+
 		system("CLS");
 		gotoxy(50, 2);
 		cout << "Game Over";
