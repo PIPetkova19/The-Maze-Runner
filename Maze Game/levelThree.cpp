@@ -4,6 +4,7 @@
 #include<conio.h>
 #include<string>
 #include"levelOne.h"
+#include"menu.h"
 
 #define KEY_UP 72
 #define KEY_DOWN 80
@@ -55,6 +56,30 @@ void printMazeThree() {
 	cout << endl;
 }
 
+void endOfGame(string answer)
+{
+
+	system("CLS");
+	gotoxy(40, 10);
+	cout << "Congratulations! You won!!" << endl;
+	gotoxy(40, 12);
+	cout << "Do you want to play again: ";
+	getline(cin, answer);
+	if (answer == "Yes" || answer == "yes" || answer == "Y" || answer == "y")
+	{
+		levelOne();
+	}
+	else {
+		system("CLS");
+
+		gotoxy(40, 2);
+		cout << "We hope you enjoyed our game!!!";
+		cout << endl;
+		cout << endl;
+		exit(0);
+	}
+
+}
 
 void levelThree()
 {
@@ -71,9 +96,12 @@ label:
 	cout << static_cast<char>(2);
 	ch = _getch();
 
-
+	if (x == 38 && y == 18)
+	{
+		endOfGame(answer);
+	}
+	
 	switch (ch) {
-
 	case KEY_UP:
 	case 'w':
 		y--;
@@ -101,7 +129,7 @@ label:
 			y = 11;
 		if ((x == 6 && y == 11) || (x == 10 && y == 11) || (x == 16 && y == 11) || (x == 20 && y == 11) || (x == 24 && y == 11) || (x == 32 && y == 11) || (x == 36 && y == 11))
 			y = 12;
-		if ((x == 4 && y == 12) || (x == 8 && y == 12) || (x == 12 && y == 12) || (x == 16 && y == 12) || (x == 20 && y == 12) || (x == 26 && y == 12))
+		if ((x == 4 && y == 12) || (x == 8 && y == 12) || (x == 12 && y == 12) || (x == 16 && y == 12) || (x == 20 && y == 12) || (x == 26 && y == 12) || (x == 22 && y == 12))
 			y = 13;
 		if ((x == 4 && y == 13) || (x == 8 && y == 13) || (x == 14 && y == 13) || (x == 24 && y == 13) || (x == 30 && y == 13) || (x == 32 && y == 13) || (x == 34 && y == 13))
 			y = 14;
@@ -167,12 +195,11 @@ label:
 	case KEY_RIGHT:
 	case 'd':
 		x += 2;
-		if (x == 38 && y == 18) {
-			system("CLS");
-			cout << "Congratulations! You passed level three" << endl;
-		}
-		if (x == 38)
+		if (x == 38 && y!=18)
+		{
 			x -= 2;
+		}
+		
 		if ((x == 20 && y == 1) || (x == 32 && y == 1))
 			x -= 2;
 		if ((x == 2 && y == 2) || (x == 4 && y == 2) || (x == 6 && y == 2) || (x == 8 && y == 2) || (x == 12 && y == 2) || (x == 18 && y == 2) || (x == 26 && y == 2) || (x == 28 && y == 2) || (x == 34 && y == 2))
@@ -210,7 +237,7 @@ label:
 		if ((x == 4 && y == 18) || (x == 8 && y == 18) || (x == 28 && y == 18) || (x == 32 && y == 18))
 			x -= 2;
 		break;
-
+		
 
 	case KEY_LEFT:
 	case 'a':
@@ -270,6 +297,3 @@ label:
 	}
 	goto label;
 }
-
-
-
