@@ -51,10 +51,15 @@ void printMazeThree() {
 void endOfGame(string answer){
 
 	system("CLS");
-	gotoxy(40, 10);
-	cout << "Congratulations! You won!!" << endl;
-	gotoxy(40, 12);
-	cout << "Do you want to play again: ";
+	cout << "                       _       _                     ___       ___                   __  " << endl;
+	cout << "                      \\ \\     / /                   /\\  \\  ___/\\  \\  __              \\  \\                 " << endl;
+	cout << "                       \\ \\   / / ___     _      _   \\ \\  \\/\\  \\ \\  \\ \\__\\       ____  \\  \\    " << endl;
+	cout << "                        \\_\\_/_/ / __ \\  | |    | |   \\ \\  \\ \\  \\ \\  \\   __    /' __ '\\ \\  \\      " << endl;
+	cout << "                          | |  /\\ \\ \\ \\ | |    | |    \\ \\  \\/   \\_\\  \\ \\  \\  /\\  \\/\\  \\ \\__\\          " << endl;
+	cout << "                          | |  \\ \\____/  |_|  |_|      \\  \\____  ____/  \\  \\ \\ \\_ \\ \\_ \\  __   " << endl;
+	cout << "                          |_|   \\/___/     |__|          \\/ __/ / __/    \\__\\ \\/ _/\\/ _/  \\__\\       " << endl;
+	cout << "                                                                                                           " << endl;
+	cout << "                                             Do you want to start a new game: ";
 	getline(cin, answer);
 	if (answer == "Yes" || answer == "yes" || answer == "Y" || answer == "y")
 	{
