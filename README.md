@@ -21,7 +21,7 @@ You can see our presentation here:
 Name | Email
 -------|------------
 Petya Petkova | PIPetkova19@codingburgas.bg
-Dimityr Grudov | DHGrudov19@codingburgas.bg
+Dimitar Grudov | DHGrudov19@codingburgas.bg
 Kameliya Yaneva | KKYaneva19@codingburgas.bg
 Vesela Dekova | VBDekova19@codingburgas.bg
 
