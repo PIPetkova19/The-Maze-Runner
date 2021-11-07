@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void printMazeTwo() {
+void printMazeTwo() {//Print the maze for level two
 	char** maze = new char* [16];
 
 	for (int i = 0; i < 16; i++)
@@ -334,7 +334,7 @@ void changeLevelTwo(string answer)
 
 }
 
-void levelTwo()
+void levelTwo()//Movement of the smiley face with arrows and wasd keys
 {
 	int x = 0, y = 1;
 	system("CLS");
