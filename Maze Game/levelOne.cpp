@@ -200,6 +200,10 @@ void levelOne()
 		case KEY_UP:
 		case 'w':
 			y--;
+			if (x == 0 && y == 2)
+			{
+				y = 3;
+			}
 			if (x == 12 && y == 3)
 			{
 				y = 4;
