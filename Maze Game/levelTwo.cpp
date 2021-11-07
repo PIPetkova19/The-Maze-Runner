@@ -59,7 +59,7 @@ void changeLevelTwo(string answer)
 	cout << "                          | |  \\ \\____/  |_|  |_|      \\  \\____  ____/  \\  \\ \\ \\_ \\ \\_ \\  __   " << endl;
 	cout << "                          |_|   \\/___/     |__|          \\/ __/ / __/    \\__\\ \\/ _/\\/ _/  \\__\\       " << endl;
 	cout << "                                                                                                           " << endl;
-	cout << "                                             Do you want to start a new game: ";
+	cout << "                                                 Do you want to continue: ";
 	getline(cin, answer);
 
 	if (answer == "Yes" || answer == "yes" || answer == "Y" || answer == "y")
