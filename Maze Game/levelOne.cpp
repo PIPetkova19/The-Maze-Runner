@@ -26,7 +26,7 @@ int gotoxy(int x, int y)
 	return 0;
 }
 
-void printMazeOne() {
+void printMazeOne() {//Print the mze for level one
 	char** maze = new char* [8];
 
 	for (int i = 0; i < 8; i++)
@@ -175,7 +175,7 @@ void changeLevelOne(string answer)
 
 }
 
-void levelOne()
+void levelOne()//Movement of the smiley face with arrows and wasd keys
 {
 	int x = 0, y = 3;
 	system("CLS");

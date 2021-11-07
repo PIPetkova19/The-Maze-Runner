@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void printMazeThree() {// Print the for level three
+void printMazeThree() {// Print the maze for level three
 	char** maze = new char* [20];
 
 	for (int i = 0; i < 20; i++)
