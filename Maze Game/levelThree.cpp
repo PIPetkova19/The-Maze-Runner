@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void printMazeThree() {
+void printMazeThree() {// Print the for level three
 	char** maze = new char* [20];
 
 	for (int i = 0; i < 20; i++)
@@ -440,7 +440,7 @@ void printMazeThree() {
 	delete[] maze;
 }
 
-void endOfGame(string answer){
+void endOfGame(string answer){//Print the end message when you win. Then ask do you want to continue.
 	int Set[] = { 5,7 };
 	color(Set[0]);
 	Set[0] = { 5 };
@@ -473,7 +473,7 @@ void endOfGame(string answer){
 
 }
 
-void levelThree()
+void levelThree()//Movement of the smiley face with arrows and wasd keys
 {
 	int x = 0, y = 1;
 	system("CLS");
@@ -493,8 +493,8 @@ void levelThree()
 	}
 
 	gotoxy(x, y);
-	colorTheMovingObject();
-	ch = _getch();
+	colorTheMovingObject();//Call the smiley face
+	ch = _getch();//Check if a key from the keyboard is pressed
 	switch (ch) {
 
 	case KEY_UP:
@@ -910,9 +910,9 @@ void levelThree()
 	case KEY_ENTER:
 
 		system("CLS");
-		gotoxy(50, 2);
+		gotoxy(50, 2);//Center the text "Game over"
 		cout << "Game Over" << endl << endl;
-		exit(0);
+		exit(0);//Stop the game
 		break;
 	}
 }
