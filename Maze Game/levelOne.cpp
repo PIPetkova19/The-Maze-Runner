@@ -235,7 +235,10 @@ void levelOne()//Movement of the smiley face with arrows and wasd keys
 		case KEY_DOWN:
 		case 's':
 			y++;
-
+			if (x == 0 && y == 4)
+			{
+				y = 3;
+			}
 			if ((x == 4 && y == 3) || (x == 6 && y == 3) || (x == 8 && y == 3))
 			{
 				y = 2;

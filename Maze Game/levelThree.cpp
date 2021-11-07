@@ -35,7 +35,7 @@ void printMazeThree() {// Print the maze for level three
 	maze[0][17] = static_cast<char>(254);
 	maze[0][18] = static_cast<char>(254);
 	maze[0][19] = static_cast<char>(254);
-	maze[1][0] = static_cast<char>(254);
+	maze[1][0] = '.';
 	maze[1][1] = '.';
 	maze[1][2] = '.';
 	maze[1][3] = '.';
@@ -602,6 +602,10 @@ void levelThree()//Movement of the smiley face with arrows and wasd keys
 
 		if (y == 19) {
 			y = 18;
+		}
+		if (x == 0 && y == 2)
+		{
+			y = 1;
 		}
 
 		if ((x == 20 && y == 1) || (x == 32 && y == 1))
