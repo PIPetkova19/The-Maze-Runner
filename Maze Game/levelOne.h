@@ -12,3 +12,4 @@ void printMazeOne();
 void levelOne();
 int gotoxy(int x, int y);
 void changeLevelOne(std::string answer);
+void colorTheMovingObject();

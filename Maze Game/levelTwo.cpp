@@ -5,9 +5,9 @@
 #include<string>
 #include"levelOne.h"
 #include"levelThree.h"
+#include"menu.h"
 
 using namespace std;
-
 
 void printMazeTwo() {
 	char maze[16][16] = {
@@ -34,7 +34,7 @@ void printMazeTwo() {
 		for (int j = 0; j < 16; j++) {
 			cout << maze[i][j] << " ";
 		}
-		cout << "|";
+		cout << static_cast<char>(179);
 		if (i == 7)
 		{
 			cout << "\tL E V E L - 2";
@@ -44,12 +44,16 @@ void printMazeTwo() {
 	for (int i = 0; i < 16; i++) {
 		cout << "__";
 	}
-	cout << endl;
+
+	cout << endl << endl;
+	cout << "Hint: if you want to exit press ENTER or X" << endl;
 }
 
 void changeLevelTwo(string answer)
 {
-
+	int Set[] = { 5,7 };
+	color(Set[0]);
+	Set[0] = { 5 };
 	system("CLS");
 	cout << "                       _       _                     ___       ___                   __  " << endl;
 	cout << "                      \\ \\     / /                   /\\  \\  ___/\\  \\  __              \\  \\                 " << endl;
@@ -59,7 +63,9 @@ void changeLevelTwo(string answer)
 	cout << "                          | |  \\ \\____/  |_|  |_|      \\  \\____  ____/  \\  \\ \\ \\_ \\ \\_ \\  __   " << endl;
 	cout << "                          |_|   \\/___/     |__|          \\/ __/ / __/    \\__\\ \\/ _/\\/ _/  \\__\\       " << endl;
 	cout << "                                                                                                           " << endl;
-	cout << "                                                 Do you want to continue: ";
+	color(Set[1]);
+	Set[1] = { 7 };
+	cout << "                                               Do you want to continue: ";
 	getline(cin, answer);
 
 	if (answer == "Yes" || answer == "yes" || answer == "Y" || answer == "y")
@@ -90,7 +96,7 @@ label:
 
 
 	gotoxy(x, y);
-	cout << static_cast<char>(2);
+	colorTheMovingObject();
 	ch = _getch();
 
 

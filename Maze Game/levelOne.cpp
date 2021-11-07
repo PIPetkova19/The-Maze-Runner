@@ -4,6 +4,7 @@
 #include<conio.h>
 #include<string>
 #include "levelTwo.h"
+#include "menu.h"
 
 #define KEY_UP 72
 #define KEY_DOWN 80
@@ -31,7 +32,9 @@ void printMazeOne() {
 	for (int i = 0; i < 8; i++)
 	{
 		maze[i] = new char[8];
-	}
+	}	
+	
+	
 	maze[0][0] = static_cast<char>(254);
 	maze[0][1] = static_cast<char>(254);
 	maze[0][2] = static_cast<char>(254);
@@ -96,7 +99,7 @@ void printMazeOne() {
 	maze[7][5] = static_cast<char>(254);
 	maze[7][6] = static_cast<char>(254);
 	maze[7][7] = static_cast<char>(254);
-
+	
 	cout << endl;
 
 
@@ -104,7 +107,8 @@ void printMazeOne() {
 		for (int j = 0; j <= 7; j++) {
 			cout << maze[i][j] << " ";
 		}
-		cout << "|";
+		
+		cout << static_cast<char>(179);
 		if (i == 3)
 		{
 			cout << "\tL E V E L - 1";
@@ -115,7 +119,9 @@ void printMazeOne() {
 	for (int i = 0; i <= 7; i++) {
 		cout << "__";
 	}
-	cout << endl;
+
+	cout << endl << endl;
+	cout << "Hint: if you want to exit press ENTER or X" << endl;
 
 	for (int i = 0; i < 8; i++)
 	{
@@ -124,9 +130,21 @@ void printMazeOne() {
 	delete[] maze;
 }
 
+//Color the moving object
+void colorTheMovingObject() {
+	int Set[] = { 14,7 };
+	color(Set[0]);
+	Set[0] = { 14 };
+	cout << static_cast<char>(2);
+	color(Set[1]);
+	Set[1] = { 7 };
+}
+
 void changeLevelOne(string answer)
 {
-
+	int Set[] = { 5,7 };
+	color(Set[0]);
+	Set[0] = { 5 };
 	system("CLS");
 	    cout << "                       _       _                     ___       ___                   __  " << endl;
 		cout << "                      \\ \\     / /                   /\\  \\  ___/\\  \\  __              \\  \\                 " << endl;
@@ -136,8 +154,10 @@ void changeLevelOne(string answer)
 		cout << "                          | |  \\ \\____/  |_|  |_|      \\  \\____  ____/  \\  \\ \\ \\_ \\ \\_ \\  __   " << endl;
 		cout << "                          |_|   \\/___/     |__|          \\/ __/ / __/    \\__\\ \\/ _/\\/ _/  \\__\\       " << endl;
 		cout << "                                                                                                           "<<endl;
-	    cout << "                                                 Do you want to continue: ";
-	getline(cin, answer);
+		color(Set[1]);
+		Set[1] = { 7 };
+	    cout << "                                               Do you want to continue: ";
+	    getline(cin, answer);
 
 	if (answer == "Yes" || answer == "yes" || answer == "Y" || answer == "y")
 	{
@@ -167,7 +187,10 @@ label:
 
 
 	gotoxy(x, y);
-	cout << static_cast<char>(2);
+
+	colorTheMovingObject();
+
+	
 	ch = _getch();
 
 
