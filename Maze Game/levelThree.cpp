@@ -89,20 +89,22 @@ void levelThree()
 	system("CLS");
 	char ch;
 	string answer;
-label:
 	system("CLS");
 	printMazeThree();
 
+	
 
-	gotoxy(x, y);
-    colorTheMovingObject();
-	ch = _getch();
+	while (true)
+	{
 
 	if (x == 38 && y == 18)
 	{
 		endOfGame(answer);
 	}
 
+	gotoxy(x, y);
+	colorTheMovingObject();
+	ch = _getch();
 	switch (ch) {
 
 	case KEY_UP:
@@ -199,7 +201,8 @@ label:
 		{
 			y = 18;
 		}
-
+		system("CLS");
+		printMazeThree();
 		break;
 
 	case KEY_DOWN:
@@ -300,7 +303,8 @@ label:
 		{
 			y = 17;
 		}
-
+		system("CLS");
+		printMazeThree();
 		break;
 
 
@@ -403,7 +407,8 @@ label:
 		{
 			x -= 2;
 		}
-
+		system("CLS");
+		printMazeThree();
 		break;
 
 
@@ -506,7 +511,8 @@ label:
 		{
 			x += 2;
 		}
-
+		system("CLS");
+		printMazeThree();
 		break;
 
 	case 'x':
@@ -519,5 +525,5 @@ label:
 		exit(0);
 		break;
 	}
-	goto label;
+}
 }

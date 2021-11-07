@@ -90,20 +90,20 @@ void levelTwo()
 	system("CLS");
 	char ch;
 	string answer;
-label:
 	system("CLS");
 	printMazeTwo();
 
+	
+	while (true)
+	{
+		if (x == 30 && y == 14)
+		{
+		changeLevelTwo(answer);
+		}
 
 	gotoxy(x, y);
 	colorTheMovingObject();
 	ch = _getch();
-
-
-	if (x == 30 && y == 14)
-	{
-		changeLevelTwo(answer);
-	}
 
 	switch (ch) {
 
@@ -170,6 +170,8 @@ label:
 			y = 14;
 		}
 
+		system("CLS");
+		printMazeTwo();
 		break;
 
 
@@ -242,7 +244,8 @@ label:
 		{
 			y = 13;
 		}
-
+		system("CLS");
+		printMazeTwo();
 		break;
 
 
@@ -324,7 +327,8 @@ label:
 		{
 			x -= 2;
 		}
-
+		system("CLS");
+		printMazeTwo();
 		break;
 
 
@@ -412,7 +416,8 @@ label:
 		{
 			x += 2;
 		}
-
+		system("CLS");
+		printMazeTwo();
 		break;
 
 
@@ -422,11 +427,12 @@ label:
 
 		system("CLS");
 		gotoxy(50, 2);
-		cout << "Game Over"<< endl<< endl;
+		cout << "Game Over" << endl << endl;
 		exit(0);
 		break;
 	}
-	goto label;
+
+}
 }
 
 
