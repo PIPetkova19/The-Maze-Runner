@@ -291,6 +291,12 @@ void printMazeTwo() {
 
 	cout << endl << endl;
 	cout << "Hint: if you want to exit press ENTER or X" << endl;
+
+	for (int i = 0; i < 8; i++)
+	{
+		delete[] maze[i];
+	}
+	delete[] maze;
 }
 
 void changeLevelTwo(string answer)
