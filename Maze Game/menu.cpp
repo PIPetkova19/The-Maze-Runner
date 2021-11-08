@@ -80,10 +80,21 @@ void menu() {
 		if (key == 72 && (counter >= 1 && counter <= 3))
 		{
 			counter--;
+			//Doesn't let the cursor get out of the menu options 
+			if (counter == 0)
+			{
+				counter = 1;
+			}
 		}
+	
 		if (key == 80 && (counter >= 1 && counter <= 3))
 		{
 			counter++;
+			//Doesn't let the cursor get out of the menu options 
+			if (counter == 4)
+			{
+				counter = 3;
+			}
 		}
 
 		if (key == 13 || key == 77) {
