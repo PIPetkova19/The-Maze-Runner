@@ -5,7 +5,7 @@
 # Hello, we are The Maze Runner!
 <br>
 We are making a maze game. <br>
-You can see our presentation here:
+You can open and see our presentation here:
 <a href="Documents/Presentation.pptx" >Presentation</a>
 
 # Table of contents
