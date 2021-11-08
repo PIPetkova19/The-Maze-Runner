@@ -25,13 +25,14 @@ void frontEnd()
 }
 
 
-// Sets the cursor position in the specified console screen buffer
+//Color a text
 void color(int color)
 {
+	// Set the cursor position in the specified console screen buffer
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
 
-//Prints instructions for the menu
+//Print instructions for the menu
 void instructions()
 {
 	system("cls");
@@ -48,7 +49,7 @@ void instructions()
 	menu();
 }
 
-//Calls Menu
+//Call Menu
 void menu() {
 	int Set[] = { 12,7,7 };
 	int counter = 1;
@@ -72,7 +73,7 @@ void menu() {
 		color(Set[2]);
 		cout << " 3.Exit" << endl;
 
-		//Gets the key that is pressed
+		//Get the key that is pressed
 		key = _getch();
 
 		//Move cursor through the options
