@@ -15,18 +15,20 @@
 
 using namespace std;
 
+//Define the coordinates of a character cell in a console screen buffer
 int gotoxy(int x, int y)
 {
-	//Defines the coordinates of a character cell in a console screen buffer
+	
 	COORD c;
 	c.X = x;
 	c.Y = y;
-	// Sets the cursor position in the specified console screen buffer
+	// Set the cursor position in the specified console screen buffer
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), c);
 	return 0;
 }
 
-void printMazeOne() {//Print the mze for level one
+//Print the mze for level one
+void printMazeOne() {
 	char** maze = new char* [8];
 
 	for (int i = 0; i < 8; i++)
@@ -34,7 +36,7 @@ void printMazeOne() {//Print the mze for level one
 		maze[i] = new char[8];
 	}	
 	
-	
+	//Using extended ASCII table
 	maze[0][0] = static_cast<char>(254);
 	maze[0][1] = static_cast<char>(254);
 	maze[0][2] = static_cast<char>(254);
@@ -140,6 +142,7 @@ void colorTheMovingObject() {
 	Set[1] = { 7 };
 }
 
+//Ask if you want to continue to the next level
 void changeLevelOne(string answer)
 {
 	int Set[] = { 5,7 };
@@ -175,7 +178,8 @@ void changeLevelOne(string answer)
 
 }
 
-void levelOne()//Movement of the smiley face with arrows and wasd keys
+//Move the smiley face with arrow keys and wasd keys
+void levelOne()
 {
 	int x = 0, y = 3;
 	system("CLS");
@@ -188,7 +192,9 @@ void levelOne()//Movement of the smiley face with arrows and wasd keys
 	{		
 
 		gotoxy(x, y);
+		//Call the smiley face and colors it
 		colorTheMovingObject();
+		//Check what key from the keyboard is pressed
 		ch = _getch();
 
 		if (x == 14 && y == 7)
@@ -199,6 +205,7 @@ void levelOne()//Movement of the smiley face with arrows and wasd keys
 		switch (ch) {
 		case KEY_UP:
 		case 'w':
+			//Make sure the smiley face doesn't go in the boundaries
 			y--;
 			if (x == 0 && y == 2)
 			{

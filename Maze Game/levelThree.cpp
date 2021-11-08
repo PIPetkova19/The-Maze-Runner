@@ -1,20 +1,22 @@
 #include <iostream>
 #include<process.h>
 #include<windows.h>
-#include<conio.h>
+#include<conio.h> //For getch()
 #include<string>
 #include"levelOne.h"
 #include"menu.h"
 
 using namespace std;
 
-void printMazeThree() {// Print the maze for level three
+//Print the maze for level three
+void printMazeThree() {
 	char** maze = new char* [20];
 
 	for (int i = 0; i < 20; i++)
 	{
 		maze[i] = new char[20];
 	}
+	//Using extended ASCII table
 	maze[0][0] = static_cast<char>(254);
 	maze[0][1] = static_cast<char>(254);
 	maze[0][2] = static_cast<char>(254);
@@ -440,7 +442,8 @@ void printMazeThree() {// Print the maze for level three
 	delete[] maze;
 }
 
-void endOfGame(string answer){//Print the end message when you win. Then ask do you want to continue.
+//Print the end message when you win. Then ask do you want to continue.
+void endOfGame(string answer){
 	int Set[] = { 5,7 };
 	color(Set[0]);
 	Set[0] = { 5 };
@@ -473,7 +476,8 @@ void endOfGame(string answer){//Print the end message when you win. Then ask do 
 
 }
 
-void levelThree()//Movement of the smiley face with arrows and wasd keys
+//Movement of the smiley face with arrows and wasd keys
+void levelThree()
 {
 	int x = 0, y = 1;
 	system("CLS");
@@ -493,8 +497,10 @@ void levelThree()//Movement of the smiley face with arrows and wasd keys
 	}
 
 	gotoxy(x, y);
-	colorTheMovingObject();//Call the smiley face
-	ch = _getch();//Check if a key from the keyboard is pressed
+	//Call the smiley face and colors it
+	colorTheMovingObject();
+	//Check what key from the keyboard is pressed
+	ch = _getch();
 	switch (ch) {
 
 	case KEY_UP:
@@ -502,6 +508,7 @@ void levelThree()//Movement of the smiley face with arrows and wasd keys
 
 		y--;
 
+		//Make sure the smiley face doesn't go in the boundaries
 		if (y == 0)
 		{
 			y = 1;

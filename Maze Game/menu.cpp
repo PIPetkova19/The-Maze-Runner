@@ -31,6 +31,7 @@ void color(int color)
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
 
+//Prints instructions for the menu
 void instructions()
 {
 	system("cls");
@@ -71,6 +72,7 @@ void menu() {
 		color(Set[2]);
 		cout << " 3.Exit" << endl;
 
+		//Gets the key that is pressed
 		key = _getch();
 
 		//Move cursor through the options
@@ -107,7 +109,7 @@ void menu() {
 		Set[1] = 7;
 		Set[2] = 7;
 
-		//Set color while moving through the option
+		//Set color as red while moving through the option
 		if (counter == 1)
 		{
 			Set[0] = 12;

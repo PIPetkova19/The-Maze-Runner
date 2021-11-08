@@ -9,13 +9,15 @@
 
 using namespace std;
 
-void printMazeTwo() {//Print the maze for level two
+//Print the maze for level two
+void printMazeTwo() {
 	char** maze = new char* [16];
 
 	for (int i = 0; i < 16; i++)
 	{
 		maze[i] = new char[16];
 	}
+	//Using extended ASCII table 
 	maze[0][0] = static_cast<char>(254);
 	maze[0][1] = static_cast<char>(254);
 	maze[0][2] = static_cast<char>(254);
@@ -299,6 +301,7 @@ void printMazeTwo() {//Print the maze for level two
 	delete[] maze;
 }
 
+//Ask if you want to continue to the next level
 void changeLevelTwo(string answer)
 {
 	int Set[] = { 5,7 };
@@ -334,7 +337,8 @@ void changeLevelTwo(string answer)
 
 }
 
-void levelTwo()//Movement of the smiley face with arrows and wasd keys
+//Move the smiley face with arrow keys and wasd keys
+void levelTwo()
 {
 	int x = 0, y = 1;
 	system("CLS");
@@ -352,7 +356,9 @@ void levelTwo()//Movement of the smiley face with arrows and wasd keys
 		}
 
 	gotoxy(x, y);
+	//Call the smiley face and colors it
 	colorTheMovingObject();
+	//Check what key from the keyboard is pressed
 	ch = _getch();
 
 	switch (ch) {
@@ -360,6 +366,7 @@ void levelTwo()//Movement of the smiley face with arrows and wasd keys
 	case KEY_UP:
 	case 'w':
 		y--;
+		//Make sure the smiley face doesn't go in the boundaries
 		if (y == 0)
 		{
 			y = 1;
