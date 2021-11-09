@@ -12,7 +12,7 @@ void frontEnd()
 {
 	int Set[] = { 5, 7};
 	color(Set[0]);
-	Set[0] = 15;
+	Set[0] = 5;
 	cout << "                     ___       ___           ____                     " << endl;
 	cout << "                    /\\  \\  ___/\\  \\         /\\   \\              " << endl;
 	cout << "                    \\ \\  \\/\\  \\ \\  \\     ___\\//\\  \\     ___     ___       ___  ___       ___" << endl;
@@ -51,7 +51,7 @@ void instructions()
 
 //Call Menu
 void menu() {
-	int Set[] = { 12,7,7 };
+	int Set[] = { 8,7,7 };
 	int counter = 1;
 	char key;
 
@@ -63,15 +63,15 @@ void menu() {
 
 		gotoxy(10, 5);
 		color(Set[0]);
-		cout << " 1.Start Game" << endl;
+		cout << " <Start Game>" << endl;
 
 		gotoxy(10, 6);
 		color(Set[1]);
-		cout << " 2.Instructions" << endl;
+		cout << " <Instructions>" << endl;
 
 		gotoxy(10, 7);
 		color(Set[2]);
-		cout << " 3.Exit" << endl;
+		cout << " <Exit>" << endl;
 
 		//Get the key that is pressed
 		key = _getch();
@@ -124,15 +124,15 @@ void menu() {
 		//Set color as red while moving through the option
 		if (counter == 1)
 		{
-			Set[0] = 12;
+			Set[0] = 8;
 		}
 		if (counter == 2)
 		{
-			Set[1] = 12;
+			Set[1] = 8;
 		}
 		if (counter == 3)
 		{
-			Set[2] = 12;
+			Set[2] = 8;
 		}
 	}
 }
