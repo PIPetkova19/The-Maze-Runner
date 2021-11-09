@@ -321,19 +321,19 @@ void changeLevelTwo(string answer)
 	cout << "                                               Do you want to continue: ";
 	getline(cin, answer);
 
-	if (answer == "Yes" || answer == "yes" || answer == "Y" || answer == "y")
+	if (answer == "Yes" || answer == "yes" || answer == "YES" || answer == "Y" || answer == "y")
 	{
-		levelThree();
+		levelTwo();
 	}
 
-	else {
+
+	else if (answer == "no" || answer == "No" || answer == "NO" || answer == "n" || answer == "") {
 		system("CLS");
 		gotoxy(40, 2);
 		cout << "We hope you enjoyed our game!!!";
 		cout << endl;
 		cout << endl;
 		exit(0);
-	}
 
 }
 

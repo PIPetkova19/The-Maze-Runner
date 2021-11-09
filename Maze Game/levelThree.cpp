@@ -460,19 +460,19 @@ void endOfGame(string answer){
 	Set[1] = { 7 };
 	cout << "                                           Do you want to start a new game: ";
 	getline(cin, answer);
-	if (answer == "Yes" || answer == "yes" || answer == "Y" || answer == "y")
+	if (answer == "Yes" || answer == "yes" || answer == "YES" || answer == "Y" || answer == "y")
 	{
-		levelOne();
+		levelTwo();
 	}
-	else {
-		system("CLS");
 
+
+	else if (answer == "no" || answer == "No" || answer == "NO" || answer == "n" || answer == "") {
+		system("CLS");
 		gotoxy(40, 2);
 		cout << "We hope you enjoyed our game!!!";
 		cout << endl;
 		cout << endl;
 		exit(0);
-	}
 
 }
 
