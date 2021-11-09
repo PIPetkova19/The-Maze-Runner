@@ -462,7 +462,7 @@ void endOfGame(string answer){
 	getline(cin, answer);
 	if (answer == "Yes" || answer == "yes" || answer == "YES" || answer == "Y" || answer == "y")
 	{
-		levelTwo();
+		levelOne();
 	}
 
 
@@ -473,7 +473,7 @@ void endOfGame(string answer){
 		cout << endl;
 		cout << endl;
 		exit(0);
-
+	}
 }
 
 //Movement of the smiley face with arrows and wasd keys

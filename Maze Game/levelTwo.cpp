@@ -323,7 +323,7 @@ void changeLevelTwo(string answer)
 
 	if (answer == "Yes" || answer == "yes" || answer == "YES" || answer == "Y" || answer == "y")
 	{
-		levelTwo();
+		levelThree();
 	}
 
 
@@ -335,6 +335,7 @@ void changeLevelTwo(string answer)
 		cout << endl;
 		exit(0);
 
+	}
 }
 
 //Move the smiley face with arrow keys and wasd keys

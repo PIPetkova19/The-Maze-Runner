@@ -149,232 +149,234 @@ void changeLevelOne(string answer)
 	color(Set[0]);
 	Set[0] = { 5 };
 	system("CLS");
-	    cout << "                       _       _                     ___       ___                   __  " << endl;
-		cout << "                      \\ \\     / /                   /\\  \\  ___/\\  \\  __              \\  \\                 " << endl;
-		cout << "                       \\ \\   / / ___     _      _   \\ \\  \\/\\  \\ \\  \\ \\__\\       ____  \\  \\    " << endl;
-		cout << "                        \\_\\_/_/ / __ \\  | |    | |   \\ \\  \\ \\  \\ \\  \\   __    /' __ '\\ \\  \\      " << endl;
-		cout << "                          | |  /\\ \\ \\ \\ | |    | |    \\ \\  \\/   \\_\\  \\ \\  \\  /\\  \\/\\  \\ \\__\\          " << endl;
-		cout << "                          | |  \\ \\____/  |_|  |_|      \\  \\____  ____/  \\  \\ \\ \\_ \\ \\_ \\  __   " << endl;
-		cout << "                          |_|   \\/___/     |__|          \\/ __/ / __/    \\__\\ \\/ _/\\/ _/  \\__\\       " << endl;
-		cout << "                                                                                                           "<<endl;
-		color(Set[1]);
-		Set[1] = { 7 };
-	    cout << "                                               Do you want to continue: ";
-	    getline(cin, answer);
-
-		
-		if (answer == "Yes" || answer == "yes" || answer == "YES" || answer == "Y" || answer == "y")
-		{
-			levelTwo();
-		}
+	cout << "                       _       _                     ___       ___                   __  " << endl;
+	cout << "                      \\ \\     / /                   /\\  \\  ___/\\  \\  __              \\  \\                 " << endl;
+	cout << "                       \\ \\   / / ___     _      _   \\ \\  \\/\\  \\ \\  \\ \\__\\       ____  \\  \\    " << endl;
+	cout << "                        \\_\\_/_/ / __ \\  | |    | |   \\ \\  \\ \\  \\ \\  \\   __    /' __ '\\ \\  \\      " << endl;
+	cout << "                          | |  /\\ \\ \\ \\ | |    | |    \\ \\  \\/   \\_\\  \\ \\  \\  /\\  \\/\\  \\ \\__\\          " << endl;
+	cout << "                          | |  \\ \\____/  |_|  |_|      \\  \\____  ____/  \\  \\ \\ \\_ \\ \\_ \\  __   " << endl;
+	cout << "                          |_|   \\/___/     |__|          \\/ __/ / __/    \\__\\ \\/ _/\\/ _/  \\__\\       " << endl;
+	cout << "                                                                                                           " << endl;
+	color(Set[1]);
+	Set[1] = { 7 };
+	cout << "                                               Do you want to continue: ";
+	getline(cin, answer);
 
 
-		else if (answer == "no" || answer == "No" || answer == "NO" || answer == "n" || answer == "") {
-			system("CLS");
-			gotoxy(40, 2);
-			cout << "We hope you enjoyed our game!!!";
-			cout << endl;
-			cout << endl;
-			exit(0);
+	if (answer == "Yes" || answer == "yes" || answer == "YES" || answer == "Y" || answer == "y")
+	{
+		levelTwo();
+	}
 
+
+	else if (answer == "no" || answer == "No" || answer == "NO" || answer == "n" || answer == "") {
+		system("CLS");
+		gotoxy(40, 2);
+		cout << "We hope you enjoyed our game!!!";
+		cout << endl;
+		cout << endl;
+		exit(0);
+
+	}
 }
 
-//Move the smiley face with arrow keys and wasd keys
-void levelOne()
-{
-	int x = 0, y = 3;
-	system("CLS");
-	char ch;
-	string answer;
-	system("CLS");
-	printMazeOne();
-	
-	while (true)
-	{		
+	//Move the smiley face with arrow keys and wasd keys
+	void levelOne()
+	{
+		int x = 0, y = 3;
+		system("CLS");
+		char ch;
+		string answer;
+		system("CLS");
+		printMazeOne();
 
-		gotoxy(x, y);
-		//Call the smiley face and colors it
-		colorTheMovingObject();
-		//Check what key from the keyboard is pressed
-		ch = _getch();
-
-		if (x == 14 && y == 7)
+		while (true)
 		{
-		changeLevelOne(answer);
+
+			gotoxy(x, y);
+			//Call the smiley face and colors it
+			colorTheMovingObject();
+			//Check what key from the keyboard is pressed
+			ch = _getch();
+
+			if (x == 14 && y == 7)
+			{
+				changeLevelOne(answer);
+			}
+
+			switch (ch) {
+			case KEY_UP:
+			case 'w':
+				//Make sure the smiley face doesn't go in the boundaries
+				y--;
+				if (x == 0 && y == 2)
+				{
+					y = 3;
+				}
+				if (x == 12 && y == 3)
+				{
+					y = 4;
+				}
+				if ((x == 4 && y == 3) || (x == 6 && y == 3))
+				{
+					y = 4;
+				}
+				if (x == 4 && y == 5)
+				{
+					y = 6;
+				}
+
+				if ((x == 10 && y == 5) || (x == 8 && y == 5))
+				{
+					y = 6;
+				}
+
+				if (y == 1)
+				{
+					y = 2;
+				}
+				system("CLS");
+				printMazeOne();
+
+
+				break;
+
+			case KEY_DOWN:
+			case 's':
+				y++;
+				if (x == 0 && y == 4)
+				{
+					y = 3;
+				}
+				if ((x == 4 && y == 3) || (x == 6 && y == 3) || (x == 8 && y == 3))
+				{
+					y = 2;
+				}
+
+				if (x == 12 && y == 3)
+				{
+					y = 2;
+				}
+
+				if ((x == 4 && y == 5) || (x == 6 && y == 5))
+				{
+					y = 4;
+				}
+
+				if (x == 2 && y == 7)
+				{
+					y = 6;
+				}
+
+				if (x == 10 && y == 5)
+				{
+					y = 4;
+				}
+
+				if (x == 8 && y == 7)
+				{
+					y = 6;
+				}
+
+				if (y == 8)
+				{
+					y = 7;
+				}
+				system("CLS");
+				printMazeOne();
+				break;
+
+
+			case KEY_RIGHT:
+			case 'd':
+
+				x += 2;
+				if ((x == 4 && y == 3) || (x == 4 && y == 5))
+				{
+					x = 2;
+				}
+
+				if (x == 12 && y == 3)
+				{
+					x = 10;
+				}
+
+				if (x == 8 && y == 4)
+				{
+					x = 6;
+				}
+
+				if ((x == 6 && y == 6) || (x == 6 && y == 7))
+				{
+					x = 4;
+				}
+
+				if ((x == 14) && (y != 7))
+				{
+					x = 12;
+				}
+				system("CLS");
+				printMazeOne();
+				break;
+
+
+			case KEY_LEFT:
+			case 'a':
+				x -= 2;
+
+				if (x == 8 && y == 3)
+				{
+					x = 10;
+				}
+
+				if (x == 8 && y == 4)
+				{
+					x = 10;
+				}
+
+				if (x == 2 && y == 7)
+				{
+					x = 4;
+				}
+
+				if (x == 10 && y == 5)
+				{
+					x = 12;
+				}
+
+				if (x == 6 && y == 6)
+				{
+					x = 8;
+				}
+
+				if (x == 8 && y == 7)
+				{
+					x = 10;
+				}
+
+				if (x == 0)
+				{
+					x = 2;
+				}
+				system("CLS");
+				printMazeOne();
+				break;
+
+
+			case 'x':
+			case KEY_SPACE:
+			case KEY_ENTER:
+
+				system("CLS");
+				gotoxy(50, 2);
+				cout << "Game Over";
+				cout << endl;
+				cout << endl;
+				exit(0);
+				break;
+			}
 		}
 
-		switch (ch) {
-		case KEY_UP:
-		case 'w':
-			//Make sure the smiley face doesn't go in the boundaries
-			y--;
-			if (x == 0 && y == 2)
-			{
-				y = 3;
-			}
-			if (x == 12 && y == 3)
-			{
-				y = 4;
-			}
-			if ((x == 4 && y == 3) || (x == 6 && y == 3))
-			{
-				y = 4;
-			}
-			if (x == 4 && y == 5)
-			{
-				y = 6;
-			}
-
-			if ((x == 10 && y == 5) || (x == 8 && y == 5))
-			{
-				y = 6;
-			}
-
-			if (y == 1)
-			{
-				y = 2;
-			}
-			system("CLS");
-			printMazeOne();
-
-
-			break;
-
-		case KEY_DOWN:
-		case 's':
-			y++;
-			if (x == 0 && y == 4)
-			{
-				y = 3;
-			}
-			if ((x == 4 && y == 3) || (x == 6 && y == 3) || (x == 8 && y == 3))
-			{
-				y = 2;
-			}
-
-			if (x == 12 && y == 3)
-			{
-				y = 2;
-			}
-
-			if ((x == 4 && y == 5) || (x == 6 && y == 5))
-			{
-				y = 4;
-			}
-
-			if (x == 2 && y == 7)
-			{
-				y = 6;
-			}
-
-			if (x == 10 && y == 5)
-			{
-				y = 4;
-			}
-
-			if (x == 8 && y == 7)
-			{
-				y = 6;
-			}
-
-			if (y == 8)
-			{
-				y = 7;
-			}
-			system("CLS");
-			printMazeOne();
-			break;
-
-
-		case KEY_RIGHT:
-		case 'd':
-
-			x += 2;
-			if ((x == 4 && y == 3) || (x == 4 && y == 5))
-			{
-				x = 2;
-			}
-
-			if (x == 12 && y == 3)
-			{
-				x = 10;
-			}
-
-			if (x == 8 && y == 4)
-			{
-				x = 6;
-			}
-
-			if ((x == 6 && y == 6) || (x == 6 && y == 7))
-			{
-				x = 4;
-			}
-
-			if ((x == 14) && (y != 7))
-			{
-				x = 12;
-			}
-			system("CLS");
-			printMazeOne();
-			break;
-
-
-		case KEY_LEFT:
-		case 'a':
-			x -= 2;
-
-			if (x == 8 && y == 3)
-			{
-				x = 10;
-			}
-
-			if (x == 8 && y == 4)
-			{
-				x = 10;
-			}
-
-			if (x == 2 && y == 7)
-			{
-				x = 4;
-			}
-
-			if (x == 10 && y == 5)
-			{
-				x = 12;
-			}
-
-			if (x == 6 && y == 6)
-			{
-				x = 8;
-			}
-
-			if (x == 8 && y == 7)
-			{
-				x = 10;
-			}
-
-			if (x == 0)
-			{
-				x = 2;
-			}
-			system("CLS");
-			printMazeOne();
-			break;
-
-
-		case 'x':
-		case KEY_SPACE:
-		case KEY_ENTER:
-
-			system("CLS");
-			gotoxy(50, 2);
-			cout << "Game Over";
-			cout << endl;
-			cout << endl;
-			exit(0);
-			break;
-		}
-	}
 }
 
 
