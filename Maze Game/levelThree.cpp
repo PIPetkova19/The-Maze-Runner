@@ -419,21 +419,50 @@ void printMazeThree() {
 	maze[19][19] = static_cast<char>(254);
 
 	for (int i = 0; i < 20; i++) {
+		//Color the maze
+		int Set[] = { 5,7,14,7 };
+		color(Set[0]);
+		Set[0] = { 5 };
+
 		for (int j = 0; j < 20; j++) {
 			cout << maze[i][j] << " ";
 		}
+		color(Set[1]);
+		Set[1] = { 7 };
+
 		cout << static_cast<char>(179);
+
+		color(Set[2]);
+		Set[2] = { 14 };
+
 		if (i == 10)
 		{
 			cout << "\tL E V E L - 3";
 		}
+		color(Set[3]);
+		Set[3] = { 7 };
+
 		cout << endl;
 	}
 	for (int i = 0; i < 20; i++) {
 		cout << "__";
 	}
 	cout << endl << endl;
-	cout << "Hint: if you want to exit press ENTER or X" << endl;
+
+	int Set[] = { 14,7 };
+	cout << "Hint: if you want to exit press";
+	//Color the words yellow
+	color(Set[0]);
+	Set[0] = { 14 };
+	cout << " ENTER ";
+	//Colors the words grey
+	color(Set[1]);
+	Set[1] = { 7 };
+	cout << "or";
+	//Color the words yellow
+	color(Set[0]);
+	Set[0] = { 14 };
+	cout << " X " << endl;
 
 	for (int i = 0; i < 20; i++)
 	{

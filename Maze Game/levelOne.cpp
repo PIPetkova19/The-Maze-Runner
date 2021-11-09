@@ -106,24 +106,51 @@ void printMazeOne() {
 
 
 	for (int i = 0; i <= 7; i++) {
+		//Color the maze
+		int Set[] = { 5,7,14,7 };
+		color(Set[0]);
+		Set[0] = { 5 };
+
 		for (int j = 0; j <= 7; j++) {
+			
 			cout << maze[i][j] << " ";
 		}
-		
+
+		color(Set[1]);
+		Set[1] = { 7 };
+
 		cout << static_cast<char>(179);
+
+		color(Set[2]);
+		Set[2] = { 14 };
 		if (i == 3)
 		{
 			cout << "\tL E V E L - 1";
 		}
+		color(Set[3]);
+		Set[3] = { 7 };
 		cout << endl;
 	}
 
 	for (int i = 0; i <= 7; i++) {
 		cout << "__";
 	}
-
 	cout << endl << endl;
-	cout << "Hint: if you want to exit press ENTER or X" << endl;
+
+	int Set[] = { 14,7 };
+	cout << "Hint: if you want to exit press";
+	//Color the words yellow
+	color(Set[0]);
+	Set[0] = { 14 };
+	cout << " ENTER ";
+	//Colors the words grey
+	color(Set[1]);
+	Set[1] = { 7 };
+	cout << "or";
+	//Color the words yellow
+	color(Set[0]);
+	Set[0] = { 14 };
+	cout<<" X " << endl;
 
 	for (int i = 0; i < 8; i++)
 	{
@@ -159,7 +186,7 @@ void changeLevelOne(string answer)
 	cout << "                                                                                                           " << endl;
 	color(Set[1]);
 	Set[1] = { 7 };
-	cout << "                                               Do you want to continue: ";
+	cout << "                                           Do you want to continue: ";
 	getline(cin, answer);
 
 
